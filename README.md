@@ -57,10 +57,14 @@ for git. Consequently, the script will ignore dot-files. They would show up in
 CP/M as a file with only an extention.
 * not a bug: script will overwrite anything with the name CPM128.img, CPM64.img
 and cfdisk.ide. It's a factory.
+* the download pkg format on the disk image is perhaps not the smallest format,
+but it's convenient from this side of cp/m. It's there if you want to provision
+your cp/m machine over serial
 
 # TODO
 
-Maybe a script to create a `content` directory from an existing image, as kind
-of a backup
-
-
+* Maybe a script to create a `content` directory from an existing image, as kind
+of a backup.
+* create zip archives instead of download pkg
+* something something files in database something metapackage something install
+from database yada ready diskimage
