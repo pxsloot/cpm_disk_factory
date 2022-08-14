@@ -19,6 +19,7 @@ for n in BBCBASIC HITECHC MSBASCOM MSCOBOL NZCOM PLI SLRTOOL SLRTOOLP SYS TEMPLA
   [[ $n == "USER" ]] && continue
   cd $WORKDIR
 
+  # only download when necessary
   [[ ! -f $ZIPDIR/$n.CPM.zip ]] && \
     wget -O $ZIPDIR/$n.CPM.zip \
       "https://github.com/RC2014Z80/RC2014/blob/master/ROMs/CPM-IDE/CPM%20Drives/$n.CPM.zip?raw=true"
