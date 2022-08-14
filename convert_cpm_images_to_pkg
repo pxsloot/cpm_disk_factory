@@ -38,6 +38,7 @@ for n in BBCBASIC HITECHC MSBASCOM MSCOBOL NZCOM PLI SLRTOOL SLRTOOLP SYS TEMPLA
   mkdir -p $TMPDIR/$n/files
   cpmcp -f rc2014noboot $disk.CPM 0:*.* $TMPDIR/$n/files/
   cd $TMPDIR/$n/files
+  # lowercase filename
   pkg=$(tr 'A-Z' 'a-z' <<< $n)
   filepackage.py $(ls | sort) > $PKGDIR/$pkg.pkg
   cd $WORKDIR
