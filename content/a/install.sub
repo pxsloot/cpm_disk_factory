@@ -1,0 +1,14 @@
+A:
+A:DEPKG O:SYSTEM.PKG
+A:DEPKG N:CPMTRANS.PKG
+C:
+A:DEPKG N:CPM_DEV.PKG
+D:
+A:DEPKG O:HITECHC.PKG
+G:
+A:DEPKG O:GAMES.PKG
+A:DEPKG O:INFOCOM.PKG
+A:DEPKG O:ZORK123.PKG
+I:
+A:DEPKG O:WRDSTAR4.PKG
+

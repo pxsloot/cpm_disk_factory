@@ -1,0 +1,461 @@
+diskdef rc2014boot
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 1
+  os 2.2
+end
+
+diskdef rc2014noboot
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  os 2.2
+end
+
+diskdef rc2014small
+  seclen 512
+  tracks 128
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  os 2.2
+end
+
+diskdef rc2014a
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 1
+  os 2.2
+end
+
+diskdef rc2014b
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  # Offset of next partition
+  offset 512t
+  os 2.2
+end
+
+diskdef rc2014c
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  # Offset of next partition
+  offset 1024t
+  os 2.2
+end
+
+diskdef rc2014d
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  # Offset of next partition
+  offset 1536t
+  os 2.2
+end
+
+diskdef rc2014e
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  # Offset of next partition
+  offset 2048t
+  os 2.2
+end
+
+diskdef rc2014f
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  # Offset of next partition
+  offset 2560t
+  os 2.2
+end
+
+diskdef rc2014g
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  # Offset of next partition
+  offset 3072t
+  os 2.2
+end
+
+diskdef rc2014h
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  # Offset of next partition
+  offset 3584t
+  os 2.2
+end
+
+diskdef rc2014i
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  # Offset of next partition
+  offset 4096t
+  os 2.2
+end
+
+diskdef rc2014j
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  # Offset of next partition
+  offset 4608t
+  os 2.2
+end
+
+diskdef rc2014k
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  # Offset of next partition
+  offset 5120t
+  os 2.2
+end
+
+diskdef rc2014l
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  # Offset of next partition
+  offset 5632t
+  os 2.2
+end
+
+diskdef rc2014m
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  # Offset of next partition
+  offset 6144t
+  os 2.2
+end
+
+diskdef rc2014n
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  # Offset of next partition
+  offset 6656t
+  os 2.2
+end
+
+diskdef rc2014o
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  # Offset of next partition
+  offset 7168t
+  os 2.2
+end
+
+diskdef rc2014p
+  seclen 512
+  tracks 128
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  boottrk 0
+  # Offset of next partition
+  offset 7680t
+  os 2.2
+end
+
+diskdef rc2014em-a
+#Alan Cox RC2014 emulator
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 1
+  offset 1K
+  os 2.2
+end
+
+diskdef rc2014em-b
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 0
+  offset 8193k
+  os 2.2
+end
+
+diskdef rc2014em-c
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 0
+  offset 16385k
+  os 2.2
+end
+
+diskdef rc2014em-d
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 0
+  offset 24577k
+  os 2.2
+end
+
+diskdef rc2014em-e
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 0
+  offset 32769k
+  os 2.2
+end
+
+diskdef rc2014em-f
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 0
+  offset 40961k
+  os 2.2
+end
+
+diskdef rc2014em-g
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 0
+  offset 49153k
+  os 2.2
+end
+
+diskdef rc2014em-h
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 0
+  offset 57345k
+  os 2.2
+end
+
+diskdef rc2014em-i
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 0
+  offset 65537k
+  os 2.2
+end
+
+diskdef rc2014em-j
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 0
+  offset 73729k
+  os 2.2
+end
+
+diskdef rc2014em-k
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 0
+  offset 81921k
+  os 2.2
+end
+
+diskdef rc2014em-l
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 0
+  offset 90113k
+  os 2.2
+end
+
+diskdef rc2014em-m
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 0
+  offset 98305k
+  os 2.2
+end
+
+diskdef rc2014em-n
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 0
+  offset 106497k
+  os 2.2
+end
+
+diskdef rc2014em-o
+  seclen 512
+  tracks 512
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 0
+  offset 114689k
+  os 2.2
+end
+
+diskdef rc2014em-p
+  seclen 512
+  tracks 128
+  sectrk 32
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 0
+  offset 122881k
+  os 2.2
+end
+
+# RomWBW 8MB Hard Disk, LU 0-3
+diskdef wbwem-c
+  seclen 512
+  tracks 65
+  sectrk 256
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 1
+  os 2.2
+  offset 1K
+end
+
+diskdef wbwem-d
+  seclen 512
+  tracks 130
+  sectrk 256
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 66
+  os 2.2
+  offset 1K
+end
+
+diskdef wbwem-e
+  seclen 512
+  tracks 195
+  sectrk 256
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 131
+  os 2.2
+  offset 1K
+end
+
+diskdef wbwem-f
+  seclen 512
+  tracks 260
+  sectrk 256
+  blocksize 4096
+  maxdir 512
+  skew 0
+  boottrk 196
+  offset 1K
+  os 2.2
+end
