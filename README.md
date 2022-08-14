@@ -60,6 +60,7 @@ and cfdisk.ide. It's a factory.
 * the download pkg format on the disk image is perhaps not the smallest format,
 but it's convenient from this side of cp/m. It's there if you want to provision
 your cp/m machine over serial
+* text file conversion is problematic. My timing is off.
 
 # TODO
 
@@ -68,3 +69,6 @@ of a backup.
 * create zip archives instead of download pkg
 * something something files in database something metapackage something install
 from database yada ready diskimage
+* text file conversion must be consistently applied with `cpmcp`, but unix text
+added to a download pkg won't be converted on the cp/m side. Conversion between
+encodings is almost as fun as programming with dates.
