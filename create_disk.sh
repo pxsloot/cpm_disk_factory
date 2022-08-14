@@ -5,11 +5,6 @@
 # objdump -s ROM.HEX | xxd -r - rom
 #
 # TODO:
-# - dd can replace mkfs.cpm to install bootblocks
-# - figure out how to get the bootblocks, more
-#   reliable than getting them from the images in
-#   rc2014-master. Building them from source would
-#   be ideal
 # - cpmtools with rc2014boot and rc2014disk
 #   definitions are implied. Docker would solve it
 #   clean.
