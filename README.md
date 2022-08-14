@@ -10,7 +10,7 @@ Other targets (`simh` for example) are possible by adding them to the `diskdefs`
 ## dependencies
 
 This bash script uses `cpmtools` and a few unixy tools like `awk`, `dd`.
-To create a bootable disk I've copied the bootblocks from the [RC2014Z80](https://github.com/RC2014Z80/RC2014) project.
+To create a bootable disk I've copied the bootblocks from the [RC2014Z80](https://github.com/RC2014Z80/RC2014) project images.
 I found that cpmtools work better under linux than osx, YMMV.
 
 ## populating the disks
