@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# download CPM IDE images from project RC2014Z80 github
+# and transform them to packages
+# 
+
+TOPDIR=$PWD
+WORKDIR=$TOPDIR/work
+ZIPDIR=$WORKDIR/zip
+PKGDIR=$WORKDIR/pkg
+TMPDIR=$WORKDIR/tmp
+
+mkdir -p $WORKDIR $ZIPDIR $PKGDIR
+
+for n in BBCBASIC HITECHC MSBASCOM MSCOBOL NZCOM PLI SLRTOOL SLRTOOLP SYS TEMPLATE TURBOP USER; do
+  # skip TEMPLATE, it's empty
+  [[ $n == "TEMPLATE" ]] && continue
+  # skip USER, it's too big. Haven't looked at it yet
+  [[ $n == "USER" ]] && continue
+  cd $WORKDIR
+
+  [[ ! -f $ZIPDIR/$n.CPM.zip ]] && \
+    wget -O $ZIPDIR/$n.CPM.zip \
+      "https://github.com/RC2014Z80/RC2014/blob/master/ROMs/CPM-IDE/CPM%20Drives/$n.CPM.zip?raw=true"
+
+  rm -rf $TMPDIR/$n
+  mkdir -p $TMPDIR/$n
+  cd $TMPDIR/$n
+  unzip $ZIPDIR/$n.CPM.zip
+
+  disk=$n
+  # zip file name differs from disk file name
+  [[ $n == "SLRTOOLP" ]] && disk="SLRTOOL+"
+  cp $TOPDIR/diskdefs .
+
+  mkdir -p $TMPDIR/$n/files
+  cpmcp -f rc2014noboot $disk.CPM 0:*.* $TMPDIR/$n/files/
+  cd $TMPDIR/$n/files
+  filepackage.py $(ls | sort) > $PKGDIR/$n.pkg
+  cd $WORKDIR
+done
