@@ -44,6 +44,9 @@ only 64/128MB. The emulator is happy enough with it, so it works for me :-)
 ## usage
 
 Put everything you want to appear on the image in the `content/[a-p]` directory.
+Alternatively you can remove a content/? directory and put a 8MB diskimage in
+place with the name '?.CPM'. The script will then use that disk image as
+partition (this is terrible UX, so kinda just like cp/m)
 Run the script, use `dd` or `win32image` to put the `CPM128.img` on a cfcard.
 
 Or use the RC2014 emulator with the `cfdisk.ide` image:
@@ -56,11 +59,10 @@ Or use the RC2014 emulator with the `cfdisk.ide` image:
 for git. Consequently, the script will ignore dot-files. They would show up in
 CP/M as a file with only an extention.
 * not a bug: script will overwrite anything with the name CPM128.img, CPM64.img
-and cfdisk.ide. It's a factory.
-* the download pkg format on the disk image is perhaps not the smallest format,
+and cfdisk.ide. It's a factory, just build it again.
+* the download pkg format on the disk image is perhaps not the sma(ll|rt)est format,
 but it's convenient from this side of cp/m. It's there if you want to provision
 your cp/m machine over serial
-* text file conversion is problematic. My timing is off.
 
 # TODO
 
@@ -69,6 +71,3 @@ of a backup.
 * create zip archives instead of download pkg
 * something something files in database something metapackage something install
 from database yada ready diskimage
-* text file conversion must be consistently applied with `cpmcp`, but unix text
-added to a download pkg won't be converted on the cp/m side. Conversion between
-encodings is almost as fun as programming with dates.

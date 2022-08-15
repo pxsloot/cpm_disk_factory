@@ -34,11 +34,12 @@ cf_disk_image=cfdisk.ide
 td=src
 
 function usage {
-  echo "Usage: $0 [-b <filename>] [-c <64|128>]"
+  echo "Usage: $0 [-b <filename>] [-c <64|128>] [-n]"
   echo "  -b <filename>  specify 16kb bootblock file"
   echo "                 (default: bootblock_sio.bin)"
   echo "  -c <64|128>    specify cfcard size 64 or 128mb"
   echo "                 (default: 128)"
+  echo "  -n             do not populate disks (create empty disk)"
 }
 
 function err {
@@ -47,10 +48,11 @@ function err {
   exit 1
 }
 
-while getopts "b:c:" opt; do
+while getopts "b:c:n" opt; do
   case $opt in
     "b") bb=$OPTARG;;
     "c") (( OPTARG == "64" )) && mp=8 && sp=5 && disk_image=CPM64.img;;
+    "n") unset cp_content;;
     *) err "invalid option $OPTARG";;
   esac
 done
@@ -87,11 +89,12 @@ for n in $( seq 1 $mp); do
   # last partition is small
   (( n == mp )) && mb=$sp
 
-  echo -n " | size $mb Mb "
+  echo -n " | size $mb Mb"
   for b in $(seq 1 $mb); do
     cat block
   done > $td/partition_$p
 
+  # Not fond of this CPMTOOLSFMT usage
   export CPMTOOLSFMT=rc2014noboot
   # exceptions
   # install bootblock on partition_a
@@ -106,9 +109,29 @@ for n in $( seq 1 $mp); do
     mkfs.cpm -L $p $td/partition_$p
   fi
 
-  [[ $cp_content ]] && (( $(ls content/$p/* 2>/dev/null |wc -l) > 0 )) && \
+  # if cp_content is not set, skip copy
+  if [[ ! $cp_content ]]; then
+    echo " | content copy skipped"
+    continue
+  fi
+  # check if partition letter dir or disk image exists
+  if [[ ! -d content/$p && ! -f content/$p.CPM ]]; then
+     echo " | no content for $p"
+     continue
+  fi
+  # check if disk image
+  # this will not work in partition a, because it needs to be bootable
+  # maybe dd a bootblock into the image?
+  [[ -f content/$p.CPM ]] && \
+    echo " | using disk image" && \
+    cp content/$p.CPM src/partition_$p && \
+    continue
+  # or cpmcp content to src/partition_?
+  (( $(ls content/$p/* 2>/dev/null |wc -l) > 0 )) && \
+    #cpmcp -T raw $td/partition_$p content/$p/* 0: 2>/dev/null && \
+    # convert text files to cp/m
     echo -n " | populating filesystem" && \
-    cpmcp -T raw $td/partition_$p content/$p/* 0:
+    cpmcp -t -T raw $td/partition_$p content/$p/*.* 0: 2>/dev/null
 
   echo
 done
