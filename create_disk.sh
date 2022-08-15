@@ -71,7 +71,7 @@ echo "creating 1Mb block marked empty"
 #printf '\xE5%.0s' {1..1048576} > block
 #
 # but this works too, with mkfs.cpm
-dd if=/dev/zero of=block bs=1024 count=1024
+dd if=/dev/zero of=block bs=1024 count=1024 &> /dev/null
 
 # create 8/16 8m partition images from the 1mb block,
 # and last one is 2mb. put bootblock on the first one, copy
