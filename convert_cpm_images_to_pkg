@@ -36,6 +36,8 @@ for n in BBCBASIC HITECHC MSBASCOM MSCOBOL NZCOM PLI SLRTOOL SLRTOOLP SYS TEMPLA
   cp $TOPDIR/diskdefs .
 
   mkdir -p $TMPDIR/$n/files
+  # don't convert text file to unix. The copied files need
+  # to be like they are on cpm
   cpmcp -f rc2014noboot $disk.CPM 0:*.* $TMPDIR/$n/files/
   cd $TMPDIR/$n/files
   # lowercase filename
