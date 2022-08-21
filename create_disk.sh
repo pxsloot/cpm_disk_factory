@@ -131,7 +131,8 @@ for n in $( seq 1 $mp); do
     #cpmcp -T raw $td/partition_$p content/$p/* 0: 2>/dev/null && \
     # convert text files to cp/m
     echo -n " | populating filesystem" && \
-    cpmcp -t -T raw $td/partition_$p content/$p/*.* 0: 2>/dev/null
+    #cpmcp -t -T raw $td/partition_$p content/$p/*.* 0: 2>/dev/null
+    cpmcp -T raw $td/partition_$p content/$p/*.* 0: 2>/dev/null
 
   echo
 done
